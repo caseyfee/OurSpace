@@ -15,7 +15,7 @@ const userSchema = new Schema(
       trim:true,
       required: true,
       unique: true,
-      validate: [isEmail, 'invalid email']
+      // validate: [isEmail, 'invalid email']
     },
 
     // first: String,
