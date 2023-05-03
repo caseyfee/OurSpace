@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node config/connection.js",
+    "start": "node index",
     "dev": "nodemon index",
     "seed": "node utils/seed"
   },

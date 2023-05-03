@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-
+var validator = require('validator');
 // Schema to create User model
 const userSchema = new Schema(
   {
@@ -15,7 +15,7 @@ const userSchema = new Schema(
       trim:true,
       required: true,
       unique: true,
-      // validate: [isEmail, 'invalid email']
+      // validator: isEmail('email')
     },
 
     // first: String,
