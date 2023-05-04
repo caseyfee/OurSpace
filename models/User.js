@@ -15,7 +15,7 @@ const userSchema = new Schema(
       trim:true,
       required: true,
       unique: true,
-      // validator: isEmail('email')
+      match: [/.+@.+\..+/, 'Please enter a valid email address'],
     },
 
     // first: String,
