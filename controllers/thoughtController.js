@@ -123,4 +123,6 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+  // post friend
+  // delete friend
 };
