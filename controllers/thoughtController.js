@@ -66,7 +66,7 @@ module.exports = {
     try {
       const thought = await Thought.findOneAndRemove({ _id: req.params.thoughtId });
 
-      if (!Thought) {
+      if (!thought) {
         return res.status(404).json({ message: 'No thought with this id!' });
       }
 
@@ -123,6 +123,5 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // post friend
-  // delete friend
+ 
 };

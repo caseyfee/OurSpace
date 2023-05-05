@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 var validator = require('validator');
+
+
 // Schema to create User model
 const userSchema = new Schema(
   {
@@ -25,12 +27,13 @@ const userSchema = new Schema(
     thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'thoughts',
+        ref: 'thought',
       },
     ],
     friends: 
     {
       type: Schema.Types.ObjectId,
+      required: false,
       // Should this^ be mongoose.Schema.Types.ObjectId?
       // https://stackoverflow.com/questions/24964914/can-a-mongo-model-self-reference
       ref: 'User',
@@ -47,12 +50,12 @@ const userSchema = new Schema(
 );
 
 // Create a virtual property `fullName` that gets and sets the user's full name
-    userSchema
-      .virtual('friendCount')
-      // Getter
-      .get(function () {
-        return this.meta.friendCount;
-      })
+    // userSchema
+    //   .virtual('friendCount')
+    //   // Getter
+    //   .get(function () {
+    //     return this.meta.friendCount;
+    //   })
         // Setter to set the first and last name
           // .set(function (v) {
           //   const first = v.split(' ')[0];
