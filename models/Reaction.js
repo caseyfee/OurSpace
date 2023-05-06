@@ -1,5 +1,3 @@
-// NOT BEING USED SINCE REACTION IS ONLY A SCHEMA WITHIN THE THOUGHT MODEL
-
 const { Schema, Types } = require('mongoose');
 
 const reactionSchema = new Schema(

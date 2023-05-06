@@ -28,8 +28,8 @@ module.exports = {
       const thought = await Thought.create(req.body);
       const user = await User.findOneAndUpdate(
         { _id: req.body.userId },
-        { $addToSet: { thoughts: thought._id } },
-        { new: true }
+        { $addToSet: { thoughts: req.body } },
+        { runValidators: true, new: true }
       );
 
       if (!user) {

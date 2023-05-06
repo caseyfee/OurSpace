@@ -15,10 +15,7 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      created: Date,
-      // @casey, use a getter to format the timestamp on the query
-      // dateformat - look up on Mongoose, get
-      // https://stackoverflow.com/questions/7443142/how-do-i-format-dates-from-mongoose-in-node-js
+      get: (timestamp) => new Date(timestamp).toLocaleDateString(),
     },
     username: {
       type: String,
