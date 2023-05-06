@@ -3,7 +3,7 @@ const User = require('../models/User');
 module.exports = {
   async getUsers(req, res) {
     try {
-      const users = await User.find().populate('thoughts').populate('friends');;
+      const users = await User.find()
       res.json(users);
     } catch (err) {
       res.status(500).json(err);
@@ -42,14 +42,30 @@ module.exports = {
         return res.status(404).json({ message: 'No user with that ID' });
       }
 
-      await Thought.deleteMany({ _id: { $in: user.thoughts } });
+      // await Thought.deleteMany({ _id: { $in: user.thoughts } });
       res.json({ message: 'User and thoughts deleted!' })
     } catch (err) {
       res.status(500).json(err);
     }
   },
   // Update User
-  // 
+  async updateUser(req, res) {
+    try {
+      const user = await User.findOneAndUpdate( 
+        { id: req.params.userId },
+        { $pull: { user: req.params.userId } },
+        { new: true }
+      );
+
+      if (!user) {
+        return res.status(404).json({ message: 'No user with that ID' });
+      }
+
+      res.json({ message: 'User and thoughts updated!' })
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  },
 
    // post friend
 
