@@ -53,8 +53,8 @@ module.exports = {
     try {
       const user = await User.findOneAndUpdate( 
         { id: req.params.userId },
-        { $pull: { user: req.params.userId } },
-        { new: true }
+        { $set: req.body },
+        { runValidators: true, new: true }
       );
 
       if (!user) {
