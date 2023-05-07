@@ -72,7 +72,19 @@ module.exports = {
   },
 
    // post friend
-
+   async addFriend(req, res) {
+    try {
+      const user = await User.findByIdAndUpdate(
+        req.params.userId,
+        { $addToSet: { friends: req.params.friendId } },
+        { new: true }
+      );
+      res.json(user);
+    } catch (err) {
+      console.error('Error in addFriend:', err);
+      res.status(500).json(err);
+    }
+  },
 
   // remove friend
   async removeFriend(req, res) {
