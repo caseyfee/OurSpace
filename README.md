@@ -27,7 +27,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 - [Video](#Video-Walkthrough)
 
 ## Credits: 
-Thanks to my tutor - Dominique Meeks Gombe, classmates, and the youtubers out there! 
+Thanks to my tutor - Dominique Meeks Gombe, classmates, TAs, and the youtubers out there! 
 
 ## Questions
 Contact me at: caseyfee3@gmail.com
