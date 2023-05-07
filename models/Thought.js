@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 const User = require('./User');
-// var moment = require('moment');
 
 // Schema to create Post model
 const thoughtSchema = new Schema(
@@ -19,7 +18,6 @@ const thoughtSchema = new Schema(
     },
     username: {
       type: String,
-      required: true,
     },
     reaction: [reactionSchema],
   },

@@ -20,14 +20,10 @@ const userSchema = new Schema(
       match: [/.+@.+\..+/, 'Please enter a valid email address'],
     },
 
-    // first: String,
-    // last: String,
-    // age: Number,
-
     thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'thought',
+        ref: 'Thought',
       },
     ],
     friends: [

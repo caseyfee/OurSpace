@@ -1,3 +1,4 @@
+const { response } = require('express');
 const { Thought, User } = require('../models');
 
 module.exports = {
@@ -28,13 +29,13 @@ module.exports = {
       const thought = await Thought.create(req.body);
       const user = await User.findOneAndUpdate(
         { _id: req.body.userId },
-        { $addToSet: { thoughts: req.body } },
-        { runValidators: true, new: true }
+        { $addToSet: { thoughts: thought._id } },
+        { new: true }
       );
 
       if (!user) {
         return res.status(404).json({
-          message: 'Thought created, but found no user with that ID',
+          message: 'Thought created, but found no user with that name...ID?',
         });
       }
 
