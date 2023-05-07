@@ -15,7 +15,7 @@ module.exports = {
         .select('-__v')
         .populate('thoughts')
         .populate('friends');
-        ;
+        
 
 
       if (!user) {
