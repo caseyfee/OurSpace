@@ -1,7 +1,7 @@
 # OurSpace
 ## Description
 
-This project is the creation of an API for a social network web application for animals where users can share their thoughts, react to friends’ thoughts, and create a friend list. It uses Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the [Express.js](https://www.npmjs.com/package/express) and [Mongoose](https://www.npmjs.com/package/mongoose) packages,it uses a JavaScript date library to format timestamps.
+This project is the creation of an API for a social network web application for backyard animals where users can share their thoughts, react to friends’ thoughts, and create a friend list. It uses Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the [Express.js](https://www.npmjs.com/package/express) and [Mongoose](https://www.npmjs.com/package/mongoose) packages,it uses a JavaScript date library to format timestamps.
 
 
 This project includes a walkthrough video that demonstrates its functionality and all of the following acceptance criteria being met. 
