@@ -29,9 +29,6 @@ const userSchema = new Schema(
     friends: [
     {
       type: Schema.Types.ObjectId,
-      // required: false,
-      // Should this^ be mongoose.Schema.Types.ObjectId?
-      // https://stackoverflow.com/questions/24964914/can-a-mongo-model-self-reference
       ref: 'User',
     },
   ],

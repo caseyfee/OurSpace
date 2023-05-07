@@ -31,12 +31,12 @@ const thoughtSchema = new Schema(
 // );
 
 // Create a virtual property `reactions` that gets the amount of reaction per Thought
-// thoughtSchema
-//     .virtual('reactionCount')
-//     // Getter
-//     .get(function () {
-//       return this.reactions.length;
-//     });
+thoughtSchema
+    .virtual('reactionCount')
+    // Getter
+    .get(function () {
+      return this.reaction.length;
+    });
 
 // Initialize our Thought model
 const Thought = model('Thought', thoughtSchema);

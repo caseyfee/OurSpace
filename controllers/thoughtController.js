@@ -5,7 +5,7 @@ module.exports = {
   async getThoughts(req, res) {
     try {
       const thoughts = await Thought.find();
-      // .populate({ path: 'tags', select: '-__v' });
+      // .populate({ path: 'reactions', select: '-__v' });
       res.json(thoughts);
     } catch (err) {
       res.status(500).json(err);
@@ -14,7 +14,7 @@ module.exports = {
   async getSingleThought(req, res) {
     try {
       const thought = await Thought.findOne({ _id: req.params.thoughtId });
-        // .populate({ path: 'tags', select: '-__v' });
+        // .populate({ path: 'reactions', select: '-__v' });
 
 
       if (!thought) {
