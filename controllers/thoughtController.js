@@ -1,5 +1,5 @@
 const { response } = require('express');
-const { Thought, User } = require('../models');
+const { Thought, User, Reaction} = require('../models');
 
 module.exports = {
   async getThoughts(req, res) {
@@ -15,8 +15,8 @@ module.exports = {
   async getSingleThought(req, res) {
     try {
       const thought = await Thought.findOne({ _id: req.params.thoughtId })
-      // .select('-__v')
-      // .populate('reactions');
+      .select('-__v')
+      .populate('reactions')
 
 
       if (!thought) {
@@ -93,13 +93,13 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Add a thought reaction
+  // Add a reaction
   async addThoughtReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $addToSet: { reactions: req.body } },
-        { runValidators: true, new: true }
+        { $push: { reactions: body } },
+        { new: true }
       );
 
       if (!thought) {
